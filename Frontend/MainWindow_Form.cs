@@ -10,7 +10,7 @@ namespace DnD_Charactor_Creator.Frontend
     {
         public ProjectStatus CurrentProject = null!;
 
-        public MainWindow_Form(Character loaded = null!)
+        public MainWindow_Form()
         {
             InitializeComponent();
         }
@@ -25,7 +25,9 @@ namespace DnD_Charactor_Creator.Frontend
             {
                 LoadCharacterService loadService = new LoadCharacterService(CurrentProject.ConfigPath);
                 CurrentProject.Character = loadService.Load();
-            } else
+                DisplayCharacter(CurrentProject.Character);
+            }
+            else
             {
                 LoadEmptyCharacter();
             }
@@ -45,8 +47,30 @@ namespace DnD_Charactor_Creator.Frontend
         /// </summary>
         private void LoadEmptyCharacter()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
+        private void mp_FileClick(object sender, EventArgs e)
+        {
+            ToolStripMenuItem b = (ToolStripMenuItem)sender;
+
+            switch (b.Name)
+            {
+                case string tmiPrefix when tmiPrefix.StartsWith("tmi."): {
+                    // here
+                    break;
+                }
+                case string filePrefix when filePrefix.StartsWith("file."): {
+                    // here
+                    break;
+                }
+                case string optionsPrefix when optionsPrefix.StartsWith("opt."): {
+                    // here
+                    break;
+                }
+                default:
+                    throw new Exception("Unrechable Code");
+            }
+        }
     }
 }
