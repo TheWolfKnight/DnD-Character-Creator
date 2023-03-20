@@ -3,6 +3,7 @@ using System.Windows.Forms;
 
 using DnD_Charactor_Creator.Src.Models;
 using DnD_Charactor_Creator.Src.Services;
+using DnD_Charactor_Creator.Src.FormHandlers;
 
 namespace DnD_Charactor_Creator.Frontend
 {
@@ -52,22 +53,22 @@ namespace DnD_Charactor_Creator.Frontend
 
         private void mp_FileClick(object sender, EventArgs e)
         {
-            ToolStripMenuItem b = (ToolStripMenuItem)sender;
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
 
-            switch (b.Name)
+            switch (item.Name)
             {
-                case string tmiPrefix when tmiPrefix.StartsWith("tmi."): {
-                    // here
-                    break;
-                }
-                case string filePrefix when filePrefix.StartsWith("file."): {
-                    // here
-                    break;
-                }
-                case string optionsPrefix when optionsPrefix.StartsWith("opt."): {
-                    // here
-                    break;
-                }
+                case string tmiPrefix when tmiPrefix.StartsWith("tmi."):
+                return;
+                case string filePrefix when filePrefix.StartsWith("file."):
+                    MainForm_MenuBarFileHandler fileHandler = new MainForm_MenuBarFileHandler(this);
+                    fileHandler.onFileChildElementClickEvent(item);
+                break;
+                case string optionsPrefix when optionsPrefix.StartsWith("opt."):
+                break;
+                case string invetoryPrefix when invetoryPrefix.StartsWith("inv."):
+                break;
+                case string spellPrefix when spellPrefix.StartsWith("spl."):
+                break;
                 default:
                     throw new Exception("Unrechable Code");
             }
