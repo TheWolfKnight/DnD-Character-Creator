@@ -31,6 +31,7 @@
             tc_MainDisplay = new System.Windows.Forms.TabControl();
             tp_CharSheet = new System.Windows.Forms.TabPage();
             tp_Inv = new System.Windows.Forms.TabPage();
+            tp_Spell = new System.Windows.Forms.TabPage();
             ms_MainStrip = new System.Windows.Forms.MenuStrip();
             tmi_File = new System.Windows.Forms.ToolStripMenuItem();
             file_New = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,6 @@
             tmi_Char = new System.Windows.Forms.ToolStripMenuItem();
             tmi_Inv = new System.Windows.Forms.ToolStripMenuItem();
             tmi_Spell = new System.Windows.Forms.ToolStripMenuItem();
-            tp_Spell = new System.Windows.Forms.TabPage();
             tc_MainDisplay.SuspendLayout();
             ms_MainStrip.SuspendLayout();
             SuspendLayout();
@@ -81,6 +81,15 @@
             tp_Inv.Text = "Inventory";
             tp_Inv.UseVisualStyleBackColor = true;
             // 
+            // tp_Spell
+            // 
+            tp_Spell.Location = new System.Drawing.Point(4, 24);
+            tp_Spell.Name = "tp_Spell";
+            tp_Spell.Size = new System.Drawing.Size(1425, 683);
+            tp_Spell.TabIndex = 2;
+            tp_Spell.Text = "Spells";
+            tp_Spell.UseVisualStyleBackColor = true;
+            // 
             // ms_MainStrip
             // 
             ms_MainStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tmi_File, tmi_Options, tmi_Char, tmi_Inv, tmi_Spell });
@@ -89,6 +98,7 @@
             ms_MainStrip.Size = new System.Drawing.Size(1434, 24);
             ms_MainStrip.TabIndex = 1;
             ms_MainStrip.Text = "ms_MainStrip";
+            ms_MainStrip.ItemClicked += mp_MainStripItemClick;
             // 
             // tmi_File
             // 
@@ -96,52 +106,51 @@
             tmi_File.Name = "tmi_File";
             tmi_File.Size = new System.Drawing.Size(37, 20);
             tmi_File.Text = "File";
-            tmi_File.Click += mp_FileClick;
             // 
             // file_New
             // 
             file_New.Name = "file_New";
-            file_New.Size = new System.Drawing.Size(142, 22);
+            file_New.Size = new System.Drawing.Size(180, 22);
             file_New.Text = "New";
             // 
             // file_Open
             // 
             file_Open.Name = "file_Open";
-            file_Open.Size = new System.Drawing.Size(142, 22);
+            file_Open.Size = new System.Drawing.Size(180, 22);
             file_Open.Text = "Open";
             // 
             // file_Recent
             // 
             file_Recent.Name = "file_Recent";
-            file_Recent.Size = new System.Drawing.Size(142, 22);
+            file_Recent.Size = new System.Drawing.Size(180, 22);
             file_Recent.Text = "Open Recent";
             // 
             // file_Sep1
             // 
             file_Sep1.Name = "file_Sep1";
-            file_Sep1.Size = new System.Drawing.Size(139, 6);
+            file_Sep1.Size = new System.Drawing.Size(177, 6);
             // 
             // file_Save
             // 
             file_Save.Name = "file_Save";
-            file_Save.Size = new System.Drawing.Size(142, 22);
+            file_Save.Size = new System.Drawing.Size(180, 22);
             file_Save.Text = "Save";
             // 
             // file_SaveAs
             // 
             file_SaveAs.Name = "file_SaveAs";
-            file_SaveAs.Size = new System.Drawing.Size(142, 22);
+            file_SaveAs.Size = new System.Drawing.Size(180, 22);
             file_SaveAs.Text = "Save As";
             // 
             // file_Sep2
             // 
             file_Sep2.Name = "file_Sep2";
-            file_Sep2.Size = new System.Drawing.Size(139, 6);
+            file_Sep2.Size = new System.Drawing.Size(177, 6);
             // 
             // file_Exit
             // 
             file_Exit.Name = "file_Exit";
-            file_Exit.Size = new System.Drawing.Size(142, 22);
+            file_Exit.Size = new System.Drawing.Size(180, 22);
             file_Exit.Text = "Exit";
             // 
             // tmi_Options
@@ -167,15 +176,6 @@
             tmi_Spell.Name = "tmi_Spell";
             tmi_Spell.Size = new System.Drawing.Size(44, 20);
             tmi_Spell.Text = "Spell";
-            // 
-            // tp_Spell
-            // 
-            tp_Spell.Location = new System.Drawing.Point(4, 24);
-            tp_Spell.Name = "tp_Spell";
-            tp_Spell.Size = new System.Drawing.Size(1425, 683);
-            tp_Spell.TabIndex = 2;
-            tp_Spell.Text = "Spells";
-            tp_Spell.UseVisualStyleBackColor = true;
             // 
             // MainWindow_Form
             // 

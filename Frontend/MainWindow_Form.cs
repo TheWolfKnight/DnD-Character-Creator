@@ -51,24 +51,24 @@ namespace DnD_Charactor_Creator.Frontend
             //throw new NotImplementedException();
         }
 
-        private void mp_FileClick(object sender, EventArgs e)
+        private void mp_MainStripItemClick(object sender, ToolStripItemClickedEventArgs e)
         {
             ToolStripMenuItem item = (ToolStripMenuItem)sender;
 
             switch (item.Name)
             {
                 case string tmiPrefix when tmiPrefix.StartsWith("tmi."):
-                return;
+                    return;
                 case string filePrefix when filePrefix.StartsWith("file."):
                     MainForm_MenuBarFileHandler fileHandler = new MainForm_MenuBarFileHandler(this);
                     fileHandler.onFileChildElementClickEvent(item);
-                break;
+                    break;
                 case string optionsPrefix when optionsPrefix.StartsWith("opt."):
-                break;
+                    break;
                 case string invetoryPrefix when invetoryPrefix.StartsWith("inv."):
-                break;
+                    break;
                 case string spellPrefix when spellPrefix.StartsWith("spl."):
-                break;
+                    break;
                 default:
                     throw new Exception("Unrechable Code");
             }
