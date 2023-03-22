@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Abstration\Abstration.csproj" />
+    <ProjectReference Include="..\Builder\Builder.csproj" />
   </ItemGroup>
 
   <ItemGroup>

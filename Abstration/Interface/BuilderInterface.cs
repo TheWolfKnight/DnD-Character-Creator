@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Abstraction.Interface
 {
     public interface IBuilder<TBuilder, TResult>
-    where TBuilder: IBuilder<TBuilder, TResult>
+    where TBuilder:  IBuilder<TBuilder, TResult>
     {
         abstract static TBuilder Builder();
         TResult Build();

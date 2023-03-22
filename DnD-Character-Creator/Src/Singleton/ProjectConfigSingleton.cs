@@ -9,24 +9,32 @@ using Abstraction.Interface;
 
 namespace DnD_Charactor_Creator.Src.Singleton
 {
-    public class ProjectConfigSingleton : ISingleton<ProjectConfig>
+    public class ProjectConfigSingleton : ISingleton<ProjectConfigSingleton>
     {
-        private static bool _Instance = false;
-        private static ProjectConfig _Config = null!;
+        private static ProjectConfigSingleton _Instance = null!;
+        private ProjectConfig _Config = null!;
 
         private ProjectConfigSingleton()
         {
             _Config = new ProjectConfig("", "", "", "");
-            _Instance = true;
         }
 
-        public static ProjectConfig Instance()
+        public static ProjectConfigSingleton Instance()
         {
-            if (!_Instance)
-            {
-                new ProjectConfigSingleton();
-            }
-            return _Config;
+            if (_Instance == null)
+                _Instance = new ProjectConfigSingleton();
+            return _Instance;
         }
+
+        public void SetConfig(ProjectConfig config) => _Config = config;
+
+        #region Getter Region
+
+        public string GetRootDir() => _Config.RootDir;
+        public string GetInvetoryDir() => _Config.ItemDir;
+        public string GetSpellDir() => _Config.SpellDir;
+        public string GetCharacterDir() => _Config.CharDir;
+
+        #endregion
     }
 }

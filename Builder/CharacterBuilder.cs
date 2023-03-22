@@ -8,7 +8,7 @@ using Abstraction.Models;
 using Abstraction.Interface;
 using Abstraction.Enumerators;
 
-namespace DnD_Charactor_Creator.Src.Services
+namespace Builder
 {
     public class CharacterBuilder : IBuilder<CharacterBuilder, Character>
     {
