@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 using DnD_Charactor_Creator.Frontend;
 using Abstraction.Models;
-using DnD_Charactor_Creator.Src.Singleton;
+using DnD_Charactor_Creator.Src.Services;
 
 namespace DnD_Charactor_Creator.Src.FormHandlers
 {

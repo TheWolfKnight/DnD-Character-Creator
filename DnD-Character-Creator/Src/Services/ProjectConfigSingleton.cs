@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Abstraction.Models;
 using Abstraction.Interface;
 
-namespace DnD_Charactor_Creator.Src.Singleton
+namespace DnD_Charactor_Creator.Src.Services
 {
     public class ProjectConfigSingleton : ISingleton<ProjectConfigSingleton>
     {
