@@ -1,0 +1,134 @@
+[
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+	{
+		"name": "Barbarian",
+		"description": "",
+		"hit_die": "d12",
+		"primary_ability": "$ability$/strength",
+		"saves": [
+			"$ability$/strength",
+			"$ability$/constitution",
+		],
+		"features": []
+	},
+]

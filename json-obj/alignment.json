@@ -1,0 +1,38 @@
+[
+	{
+		"name": "Lawfull Good",
+		"description": "",
+	},
+	{
+		"name": "Lawfull Neutral",
+		"description": ""
+	}
+	{
+		"name": "Lawfull Evil",
+		"description": ""
+	}
+	{
+		"name": "Neutral Good",
+		"description": ""
+	}
+	{
+		"name": "Neutral",
+		"description": ""
+	}
+	{
+		"name": "Neutral Evil",
+		"description": ""
+	}
+	{
+		"name": "Chaotic Good",
+		"description": ""
+	}
+	{
+		"name": "Chaotic Neutral",
+		"description": ""
+	}
+	{
+		"name": "Chaotic Evil",
+		"description": ""
+	}
+]

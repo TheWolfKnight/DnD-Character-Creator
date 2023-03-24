@@ -1,0 +1,11 @@
+[
+	{
+		"name": "",
+		"description": "",
+		"cost": "",
+		// legend:     VER    SOM    MAT
+		"cast_type": [false, false, false],
+		// Use internal path refernces
+		"usable_for": []
+	}
+]
