@@ -1,11 +1,22 @@
 [
-		{
-			"major_race": "",
-			"name": "",
-			"description": "",
-			"traits": [],
-			"speed": 30,
-			"sizes": [],
-			"has_dark": false,
+	{
+		"major_race": "",
+		"name": "",
+		"description": "",
+		"traits": [],
+		"speed": 30,
+		"sizes": [],
+		"has_dark": false,
 	}
 ]
+/*
+{
+	"major_race": "",
+	"name": "",
+	"description": "",
+	"traits": [],
+	"speed": 30,
+	"sizes": [],
+	"has_dark": false,
+}
+*/

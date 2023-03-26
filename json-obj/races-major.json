@@ -7,5 +7,16 @@
 		"speed": 30,
 		"sizes": [],
 		"has_dark": false,
-	}
+	},
 ]
+/*
+{
+	"name": "",
+	"description": "",
+	"sub_races": [],
+	"traits": [],
+	"speed": 30,
+	"sizes": [],
+	"has_dark": false,
+},
+*/
