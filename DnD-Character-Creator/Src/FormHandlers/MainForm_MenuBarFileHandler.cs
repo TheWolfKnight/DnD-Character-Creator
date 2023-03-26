@@ -55,9 +55,9 @@ namespace DnD_Charactor_Creator.Src.FormHandlers
 
         private void SaveProject()
         {
-            ProjectConfig projectConfig = ProjectConfigSingleton.Instance();
+            ProjectConfigSingleton projectConfig = ProjectConfigSingleton.Instance();
 
-            if (string.IsNullOrEmpty(projectConfig.RootDir))
+            if (string.IsNullOrEmpty(projectConfig.GetRootDir()))
             {
                 SaveProjectAs();
                 return;
