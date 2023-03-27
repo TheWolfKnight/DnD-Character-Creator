@@ -43,10 +43,15 @@ namespace Abstraction.Models
         public uint Age { get; set; } = default;
         public Sizes Size { get; set; } = default;
 
+        private const int V = 2;
+
         #endregion
 
         #region Gameplay stats
 
+        public int ProficienciesBouns = 2;
+        public int PlayerLevel = 1;
+        public int Exp = 0;
         // Legend:             STR DEX CON INT WIS CHR
         public int[] Stats = { 10, 10, 10, 10, 10, 10 };
         public GameClasses Class { get; set; } = default;
@@ -100,8 +105,34 @@ namespace Abstraction.Models
         /// <returns></returns>
         public int GetSkillScore(Proficiency proficiency)
         {
-            const int PROFIC_BONUS = 2;
-            return GetAbilityScore(proficiency.AssociatedStat) + PROFIC_BONUS * proficiency.Proficient;
+            int modifier = 1;
+            if (Class == GameClasses.Bard || Class == GameClasses.Rouge)
+                modifier++;
+
+            int profBouns = ProficienciesBouns * modifier;
+
+            return GetAbilityScore(proficiency.AssociatedStat) + profBouns * proficiency.Proficient;
+        }
+
+        public void AddExp(int amount)
+        {
+
+            int[] LVL_EXP_TABLE = { 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 305000, 355000 };
+
+            if (PlayerLevel == LVL_EXP_TABLE.Length)
+                return;
+
+            if (Exp > LVL_EXP_TABLE[PlayerLevel+1])
+            {
+                Level();
+            }
+
+            Exp += amount;
+        }
+
+        private int Level(byte amount=1, bool allowEpic=false)
+        {
+            throw new NotImplementedException();
         }
     }
 
