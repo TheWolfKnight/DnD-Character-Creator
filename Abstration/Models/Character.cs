@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Abstraction.Enumerators;
+using Abstration.Models;
 
 namespace Abstraction.Models
 {
@@ -91,6 +92,17 @@ namespace Abstraction.Models
 
             return calcAbilityScore(abilityValue);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="proficiency"></param>
+        /// <returns></returns>
+        public int GetSkillScore(Proficiency proficiency)
+        {
+            const int PROFIC_BONUS = 2;
+            return GetAbilityScore(proficiency.AssociatedStat) + PROFIC_BONUS * proficiency.Proficient;
+        }
     }
 
     public struct Characteristics
@@ -107,6 +119,12 @@ namespace Abstraction.Models
     {
         public string LeftEye { get; set; }
         public string RightEye { get; set; }
+
+        public Eyes(string color)
+        {
+            LeftEye = color;
+            RightEye = color;
+        }
 
         public Eyes(string left, string right)
         {
