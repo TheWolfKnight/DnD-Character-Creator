@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Abstraction.Enumerators;
-using Abstration.Models;
 
 namespace Abstraction.Models
 {
@@ -19,6 +18,11 @@ namespace Abstraction.Models
         public string LastName { get; set; } = null!;
 
         public string FullName { get => $"{FirstName} {LastName}"; }
+
+        public void SetFullName(string fullName)
+        {
+            throw new NotImplementedException();
+        }
 
         #endregion
 
@@ -49,12 +53,17 @@ namespace Abstraction.Models
 
         #region Gameplay stats
 
+        private readonly int[] LVL_EXP_TABLE = { 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 305000, 355000 };
+
         public int ProficienciesBouns = 2;
         public int PlayerLevel = 1;
         public int Exp = 0;
         // Legend:             STR DEX CON INT WIS CHR
         public int[] Stats = { 10, 10, 10, 10, 10, 10 };
         public GameClasses Class { get; set; } = default;
+
+        public int GetEXPToNextLvl() =>
+            PlayerLevel > 20 ? LVL_EXP_TABLE[PlayerLevel + 1] : 0;
 
         #endregion
 
@@ -114,10 +123,12 @@ namespace Abstraction.Models
             return GetAbilityScore(proficiency.AssociatedStat) + profBouns * proficiency.Proficient;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="amount"></param>
         public void AddExp(int amount)
         {
-
-            int[] LVL_EXP_TABLE = { 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 305000, 355000 };
 
             if (PlayerLevel == LVL_EXP_TABLE.Length)
                 return;
