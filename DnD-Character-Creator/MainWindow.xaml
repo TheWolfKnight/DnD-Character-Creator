@@ -3,13 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DnD_Character_Creator"
+        xmlns:ViewModel="clr-namespace:DnD_Character_Creator.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="1920" Width="1080">
     <Grid>
-        <Grid.ColumnDefinitions>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
@@ -18,20 +17,14 @@
             <MenuItem Name="mi_File" Header="File"></MenuItem>
             <MenuItem Name="mi_Character" Header="Character"></MenuItem>
             <MenuItem Name="mi_Inventory" Header="Inventory"></MenuItem>
-            <MenuItem Name="mi_SpellBook" Header="Spell"></MenuItem>
+            <MenuItem Name="mi_Spells" Header="Spells"></MenuItem>
             <MenuItem Name="mi_Options" Header="Options"></MenuItem>
         </Menu>
-        
-        <TabControl TabStripPlacement="Top" Grid.Row="1" Name="tc_MainView">
+
+        <TabControl Grid.Row="2" Name="tc_MainView">
             <TabItem Name="ti_Character" Header="Character">
             </TabItem>
-            <TabItem Name="ti_Inventory" Header="Inventory">
-            </TabItem>
-            <TabItem Name="ti_SpellBook" Header="Spell Book">
-            </TabItem>
         </TabControl>
-
+        
     </Grid>
-
- 
 </Window>

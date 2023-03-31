@@ -13,15 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace DnD_Character_Creator
+namespace DnD_Character_Creator.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CharacterView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CharacterView : Page
     {
-        public MainWindow()
+        public CharacterView()
         {
             InitializeComponent();
         }
