@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Abstration\Abstraction.csproj" />
+    <ProjectReference Include="..\DataAcccess\DataAcccess.csproj" />
+  </ItemGroup>
+
 </Project>
