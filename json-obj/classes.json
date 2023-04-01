@@ -8,7 +8,8 @@
 			"Strength",
 			"Constitution",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": false
 	},
 	{
 		"name": "Bard",
@@ -19,7 +20,8 @@
 			"Charisma",
 			"Dexterity",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": true
 	},
 	{
 		"name": "Cleric",
@@ -30,7 +32,8 @@
 			"Wisdom",
 			"Charisma",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": false
 	},
 	{
 		"name": "Druid",
@@ -41,7 +44,8 @@
 			"Intelligence",
 			"Wisdom",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": false
 	},
 	{
 		"name": "Fighter",
@@ -52,7 +56,8 @@
 			"Strength",
 			"Constitution",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": false
 	},
 	{
 		"name": "Monk",
@@ -63,7 +68,8 @@
 			"Strength",
 			"Dexterity",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": false
 	},
 	{
 		"name": "Paladin",
@@ -74,7 +80,8 @@
 			"Wisdom",
 			"Charisma",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": false
 	},
 	{
 		"name": "Ranger",
@@ -85,7 +92,8 @@
 			"Strength",
 			"Dexterity",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": false
 	},
 	{
 		"name": "Rouge",
@@ -96,7 +104,8 @@
 			"Dexterity",
 			"Intelligence",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": true
 	},
 	{
 		"name": "Sorcerer",
@@ -107,7 +116,8 @@
 			"Constitution",
 			"Charisma",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": false
 	},
 	{
 		"name": "Warlock",
@@ -118,7 +128,8 @@
 			"Wisdom",
 			"Charisma",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": false
 	},
 	{
 		"name": "Wizard",
@@ -129,6 +140,7 @@
 			"Intelligence",
 			"Wisdom",
 		],
-		"features": []
+		"features": [],
+		"has_skill_modifier": false
 	},
 ]

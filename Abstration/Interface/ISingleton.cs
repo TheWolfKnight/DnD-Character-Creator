@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Abstraction.Interface
 {
-    public interface IBuilder<TBuilder, TResult>
-    where TBuilder:  IBuilder<TBuilder, TResult>
+    public interface ISingleton<T>
+    where T: ISingleton<T>
     {
-        abstract static TBuilder Builder();
-        TResult Build();
+        static abstract T Instance();
     }
 }

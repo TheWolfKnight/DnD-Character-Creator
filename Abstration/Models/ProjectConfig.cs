@@ -13,13 +13,15 @@ namespace Abstraction.Models
         public string CharDir { get; set; } = string.Empty;
         public string ItemDir { get; set; } = string.Empty;
         public string SpellDir { get; set; } = string.Empty;
+        public string ImagePath { get; set; } = string.Empty;
 
-        public ProjectConfig(string rootDir, string charDir, string itemDir, string spellDir)
+        public ProjectConfig(string rootDir, string charDir, string itemDir, string spellDir, string imagePath)
         {
             RootDir = rootDir;
             CharDir = charDir;
             ItemDir = itemDir;
             SpellDir = spellDir;
+            ImagePath = imagePath;
         }
     }
 }

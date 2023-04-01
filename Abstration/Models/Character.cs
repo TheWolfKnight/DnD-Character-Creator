@@ -60,7 +60,7 @@ namespace Abstraction.Models
         public int Exp = 0;
         // Legend:             STR DEX CON INT WIS CHR
         public int[] Stats = { 10, 10, 10, 10, 10, 10 };
-        public GameClasses Class { get; set; } = default;
+        public GameClasses Class { get; set; } = null!;
 
         public int GetEXPToNextLvl() =>
             PlayerLevel > 20 ? LVL_EXP_TABLE[PlayerLevel + 1] : 0;
@@ -73,10 +73,10 @@ namespace Abstraction.Models
         }
 
         /// <summary>
-        /// 
+        /// Gets the value of an ability score
         /// </summary>
-        /// <param name="ability"></param>
-        /// <returns></returns>
+        /// <param name="ability"> The ability score who's value will be returend </param>
+        /// <returns> The value of the ability score </returns>
         public int GetAbilityValue(Abilities ability)
         {
             return Stats[(int)ability];
@@ -102,7 +102,7 @@ namespace Abstraction.Models
             // Lambda function that calcs the ability score.
             int calcAbilityScore(int value) => (int)Math.Floor(a * value + b);
 
-            int abilityValue = Stats[(int)ability];
+            int abilityValue = GetAbilityValue(ability);
 
             return calcAbilityScore(abilityValue);
         }
@@ -115,7 +115,7 @@ namespace Abstraction.Models
         public int GetSkillScore(Proficiency proficiency)
         {
             int modifier = 1;
-            if (Class == GameClasses.Bard || Class == GameClasses.Rouge)
+            if (Class.HasSkillModifier)
                 modifier++;
 
             int profBouns = ProficienciesBouns * modifier;
@@ -141,6 +141,12 @@ namespace Abstraction.Models
             Exp += amount;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="amount"></param>
+        /// <param name="allowEpic"></param>
+        /// <returns></returns>
         private int Level(byte amount=1, bool allowEpic=false)
         {
             throw new NotImplementedException();
@@ -159,16 +165,16 @@ namespace Abstraction.Models
 
     public struct Eyes
     {
-        public string LeftEye { get; set; }
-        public string RightEye { get; set; }
+        public Color LeftEye { get; set; }
+        public Color RightEye { get; set; }
 
-        public Eyes(string color)
+        public Eyes(Color color)
         {
             LeftEye = color;
             RightEye = color;
         }
 
-        public Eyes(string left, string right)
+        public Eyes(Color left, Color right)
         {
             LeftEye = left;
             RightEye = right;
