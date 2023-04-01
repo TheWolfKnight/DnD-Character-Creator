@@ -7,24 +7,25 @@ using System.Threading.Tasks;
 
 using Abstraction.Models;
 using Abstraction.Interface;
+using Abstraction.Enumerators;
 
 using LogicLayer.Service;
 
 namespace LogicLayer.Singleton
 {
-    public class ProjectConfigSingleton : ISingleton<ProjectConfigSingleton>
+    public class ProjectConfigSingleton : ISingleton<ProjectConfig>
     {
         private static ProjectConfigSingleton _Instance { get; set; } = new ProjectConfigSingleton();
         private ProjectConfig _Config = null!;
 
         private ProjectConfigSingleton()
         {
-            _Config = LoadConfigService.Load("");
+            _Config = new ProjectConfig(string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
         }
 
-        public static ProjectConfigSingleton Instance()
+        public static ref ProjectConfig Instance()
         {
-            return _Instance;
+            return ref _Instance._Config;
         }
     }
 }

@@ -10,7 +10,7 @@
     <Window.DataContext>
         <ViewModels:MainWindowViewModel />
     </Window.DataContext>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -19,7 +19,9 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0" Name="mu_MainMenu">
-            <MenuItem Name="mi_File" Header="File"></MenuItem>
+            <MenuItem Name="mi_File" Header="File">
+                <MenuItem Name="mi_New" Header="New" />
+            </MenuItem>
             <MenuItem Name="mi_Character" Header="Character"></MenuItem>
             <MenuItem Name="mi_Inventory" Header="Inventory"></MenuItem>
             <MenuItem Name="mi_Spells" Header="Spells"></MenuItem>
@@ -27,25 +29,37 @@
         </Menu>
 
         <GroupBox Grid.Row="1" BorderThickness="0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Image x:Name="img_CharacterImage" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" HorizontalAlignment="Left" Width="120px" Height="120px" Source="{Binding GetCharacterImagePath}" />
-                <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding GetCharacterName}" HorizontalAlignment="Left" Margin="120px,0" />
-                <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding GetExpToNextLvlString}" HorizontalAlignment="left" Margin="120px,0"/>
-            </Grid>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="img_CharacterImage" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" HorizontalAlignment="Left" Width="120px" Height="120px" Source="{Binding GetCharacterImagePath}" />
+                    <Label Grid.Row="0" Grid.Column="0" Content="{Binding GetCharacterName}" HorizontalAlignment="Left" Margin="120px,0" />
+                    <Label Grid.Row="1" Grid.Column="0" Content="{Binding GetExpToNextLvlString}" HorizontalAlignment="left" Margin="120px,0"/>
+                </Grid>
+            </ScrollViewer>
         </GroupBox>
 
         <TabControl Grid.Row="2" Name="tc_MainView">
             <TabItem Name="ti_Character" Header="Character">
+                <Frame Content="{Binding ShowCharacterInfo}" />
+            </TabItem>
+            <TabItem Name="ti_Actions" Header="Actions">
+                <Frame Content="" />
+            </TabItem>
+            <TabItem Name="ti_SpellBook" Header="Spell Book">
+                <Frame Content="" />
+            </TabItem>
+            <TabItem Name="ti_Inventory" Header="Inventory">
+                <Frame Content="" />
             </TabItem>
         </TabControl>
-        
+
     </Grid>
 </Window>

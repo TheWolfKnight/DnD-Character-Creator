@@ -7,16 +7,22 @@ using System.Windows.Navigation;
 
 using Abstraction.Models;
 
+using DnD_Character_Creator.View;
+
 namespace DnD_Character_Creator.ViewModels
 {
     public class MainWindowViewModel
     {
 
-        private Character _Character { get; set; } = null!;
+        private Character _Character = null!;
         private string _Path { get; set; } = "";
+
+        private CharacterView _CharacterView = null!;
 
         public MainWindowViewModel()
         {
+            _Character = new Character();
+            _CharacterView = new CharacterView(ref _Character);
         }
 
         public string GetCharacterImagePath
@@ -33,7 +39,14 @@ namespace DnD_Character_Creator.ViewModels
 
         public string GetExpToNextLvlString
         {
-            get => $"Next Level: {_Character.GetEXPToNextLvl()}";
+            get => $"Next Level: {_Character.Exp}/{_Character.GetEXPToNextLvl()}";
+            set { }
+        }
+
+        public CharacterView ShowCharacterInfo
+        {
+            get => _CharacterView;
+            set { }
         }
     }
 }

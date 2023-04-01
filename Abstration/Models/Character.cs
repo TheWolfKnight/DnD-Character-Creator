@@ -28,7 +28,7 @@ namespace Abstraction.Models
 
         #region Race Description
 
-        public Races Race { get; set; } = default;
+        public PlayerRace Race { get; set; } = null!;
         public string SubSpecies { get; set; } = null!;
 
         #endregion
@@ -36,7 +36,7 @@ namespace Abstraction.Models
         #region Alignment and Faith
 
         public Alignment CharactreAlignemt { get; set; } = default;
-        public Lifestyles Lifestyle { get; set; } = default;
+        public CharLifestyle Lifestyle { get; set; } = null!;
         public string Faith { get; set; } = null!;
 
         #endregion
@@ -45,9 +45,7 @@ namespace Abstraction.Models
 
         public Characteristics Looks { get; set; } = default;
         public uint Age { get; set; } = default;
-        public Sizes Size { get; set; } = default;
-
-        private const int V = 2;
+        public CharSize Size { get; set; } = null!;
 
         #endregion
 
@@ -69,7 +67,8 @@ namespace Abstraction.Models
 
         public Character()
         {
-            throw new NotImplementedException();
+            FirstName = "Tobi";
+            LastName = "Idiot";
         }
 
         /// <summary>

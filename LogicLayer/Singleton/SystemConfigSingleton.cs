@@ -9,19 +9,19 @@ using Abstraction.Models;
 
 namespace LogicLayer.Singleton
 {
-    public class SystemConfigSingleton : ISingleton<SystemConfigSingleton>
+    public class SystemConfigSingleton : ISingleton<SystemConfig>
     {
         private static SystemConfigSingleton _Instance { get; set; } = new SystemConfigSingleton();
-        private SystemConfig _Config { get; set; } = null!;
+        private SystemConfig _Config = null!;
 
         private SystemConfigSingleton()
         {
             _Config = new SystemConfig();
         }
 
-        public static SystemConfigSingleton Instance()
+        public static ref SystemConfig Instance()
         {
-            return _Instance;
+            return ref _Instance._Config;
         }
     }
 }

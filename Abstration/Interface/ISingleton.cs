@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace Abstraction.Interface
 {
     public interface ISingleton<T>
-    where T: ISingleton<T>
     {
-        static abstract T Instance();
+        static abstract ref T Instance();
     }
 }

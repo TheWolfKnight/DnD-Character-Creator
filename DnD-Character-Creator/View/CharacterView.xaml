@@ -3,12 +3,48 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:DnD_Character_Creator.View"
-      mc:Ignorable="d" 
+      xmlns:ViewModel="clr-namespace:DnD_Character_Creator.ViewModels"
+      mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CharacterViewModel">
+      Background="White"
+      Title="CharacterViewModel" Height="Auto" Width="Auto">
 
-    <Grid>
-        
-    </Grid>
+    <Page.DataContext>
+        <ViewModel:CharacterViewModel />
+    </Page.DataContext>
+
+    <ScrollViewer Height="Auto" Width="Auto"
+                  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <GroupBox x:Name="gb_AbiliryScoreDisplay" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                <ListView>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <!--Label Content="{Binding AbilityName}" /-->
+                                <!--Label Content="{Binding AbilityValue}" /-->
+                                <!--Label Content="{Binding ScoreValue}" /-->
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </GroupBox>
+            <GroupBox x:Name="gb_Proficiencies" Grid.Row="1" Grid.Column="0">
+            </GroupBox>
+            <GroupBox x:Name="gb_Skills" Grid.Row="1" Grid.Column="1">
+            </GroupBox>
+            <GroupBox x:Name="gb_Remainder" Grid.Row="1" Grid.Column="2">
+            </GroupBox>
+        </Grid>
+    </ScrollViewer>
 </Page>
