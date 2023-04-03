@@ -3,4 +3,5 @@
 **/bin
 **/obj
 **/ignore
-	**/*.ignore
+**/*.ignore
+**/.vscode
