@@ -36,7 +36,7 @@ namespace Abstraction.Models
         #region Alignment and Faith
 
         public Alignment CharactreAlignemt { get; set; } = default;
-        public CharLifestyle Lifestyle { get; set; } = null!;
+        public CharacterLifeStyle Lifestyle { get; set; } = null!;
         public string Faith { get; set; } = null!;
 
         #endregion
@@ -45,7 +45,7 @@ namespace Abstraction.Models
 
         public Characteristics Looks { get; set; } = default;
         public uint Age { get; set; } = default;
-        public CharSize Size { get; set; } = null!;
+        public CharacterSize Size { get; set; } = null!;
 
         #endregion
 
@@ -95,7 +95,7 @@ namespace Abstraction.Models
              * Basically: x: 8 = -1, x: 9 = -1, x: 10 = 0, x: 11 = 0, x: 12 = 2 and so on.
             */
 
-            float a = .5f;
+            float a = 1/2;
             float b = -5;
 
             // Lambda function that calcs the ability score.
@@ -126,10 +126,11 @@ namespace Abstraction.Models
         /// 
         /// </summary>
         /// <param name="amount"></param>
-        public void AddExp(int amount)
+        public void AddExp(int amount, bool allowEpicLevels=false)
         {
+            const int _MAX_LEVEL = 20;
 
-            if (PlayerLevel == LVL_EXP_TABLE.Length)
+            if (PlayerLevel == _MAX_LEVEL && !allowEpicLevels)
                 return;
 
             if (Exp > LVL_EXP_TABLE[PlayerLevel+1])
@@ -138,6 +139,24 @@ namespace Abstraction.Models
             }
 
             Exp += amount;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public int GetProficiencyBonus()
+        {
+            /*
+             * The Proficiency Bonus is raised about every 4th lvl.
+             * This function: |_.25 * lvl + 1.75_| = Proficiency pr level.
+            */
+
+            float a = 1 / 4;
+            float b = 7 / 4;
+
+            int calcScore(int lvl) => (int)Math.Floor(a * lvl + b);
+            return calcScore(PlayerLevel);
         }
 
         /// <summary>

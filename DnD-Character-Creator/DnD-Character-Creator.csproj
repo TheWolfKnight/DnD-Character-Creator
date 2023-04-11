@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Abstration\Abstraction.csproj" />
+    <ProjectReference Include="..\LogicLayer\LogicLayer.csproj" />
   </ItemGroup>
 
 </Project>
