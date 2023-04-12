@@ -9,8 +9,6 @@ using Abstraction.Models;
 using Abstraction.Interface;
 using Abstraction.Enumerators;
 
-using LogicLayer.Service;
-
 namespace LogicLayer.Singleton
 {
     public class ProjectConfigSingleton : ISingleton<ProjectConfig>
