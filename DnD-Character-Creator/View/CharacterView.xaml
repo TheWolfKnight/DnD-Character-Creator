@@ -6,7 +6,6 @@
       xmlns:ViewModel="clr-namespace:DnD_Character_Creator.ViewModels"
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
-      Background="White"
       Title="CharacterViewModel" Height="Auto" Width="Auto">
 
     <Page.DataContext>

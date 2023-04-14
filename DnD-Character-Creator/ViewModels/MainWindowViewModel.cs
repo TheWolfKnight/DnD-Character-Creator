@@ -15,19 +15,26 @@ namespace DnD_Character_Creator.ViewModels
     {
 
         private Character _Character = null!;
-        private string _Path { get; set; } = "";
+        private string _Path { get; set; } = string.Empty;
 
         private CharacterView _CharacterView = null!;
+        private InventoryView _InventoryView = null!;
 
         public MainWindowViewModel()
         {
             _Character = new Character();
             _CharacterView = new CharacterView(ref _Character);
+            _InventoryView = new InventoryView();
         }
 
         public string GetCharacterImagePath
         {
-            get => _Path;
+            get
+            {
+                if (string.IsNullOrEmpty(_Path))
+                    return "";
+                return _Path;
+            }
             set => _Path = value;
         }
 
@@ -46,6 +53,12 @@ namespace DnD_Character_Creator.ViewModels
         public CharacterView ShowCharacterInfo
         {
             get => _CharacterView;
+            set { }
+        }
+
+        public InventoryView ShowInventory
+        {
+            get => _InventoryView;
             set { }
         }
     }

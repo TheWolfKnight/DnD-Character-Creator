@@ -21,6 +21,13 @@
         <Menu Grid.Row="0" Name="mu_MainMenu">
             <MenuItem Name="mi_File" Header="File">
                 <MenuItem Name="mi_New" Header="New" />
+                <MenuItem Name="mi_Open" Header="Open" />
+                <MenuItem Name="mi_OpenRecent" Header="Open Recent" />
+                <Separator />
+                <MenuItem Name="mi_Save" Header="Save" />
+                <MenuItem Name="mi_SaveAs" Header="Save As" />
+                <Separator />
+                <MenuItem Name="mi_Exit" Header="Exit" />
             </MenuItem>
             <MenuItem Name="mi_Character" Header="Character"></MenuItem>
             <MenuItem Name="mi_Inventory" Header="Inventory"></MenuItem>
@@ -57,7 +64,7 @@
                 <Frame Content="" />
             </TabItem>
             <TabItem Name="ti_Inventory" Header="Inventory">
-                <Frame Content="" />
+                <Frame Content="{Binding ShowInventory}" />
             </TabItem>
         </TabControl>
 
