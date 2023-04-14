@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Abstration\Abstraction.csproj" />
-    <ProjectReference Include="..\DataAcccess\DataAcccess.csproj" />
+    <ProjectReference Include="..\DataAcccess\DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

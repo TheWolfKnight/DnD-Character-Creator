@@ -53,7 +53,6 @@ namespace Abstraction.Models
 
         private readonly int[] LVL_EXP_TABLE = { 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 305000, 355000 };
 
-        public int ProficienciesBouns = 2;
         public int PlayerLevel = 1;
         public int Exp = 0;
         // Legend:             STR DEX CON INT WIS CHR
@@ -117,7 +116,7 @@ namespace Abstraction.Models
             if (Class.HasSkillModifier)
                 modifier++;
 
-            int profBouns = ProficienciesBouns * modifier;
+            int profBouns = GetProficiencyBonus() * modifier;
 
             return GetAbilityScore(proficiency.AssociatedStat) + profBouns * proficiency.Proficient;
         }
@@ -135,7 +134,7 @@ namespace Abstraction.Models
 
             if (Exp > LVL_EXP_TABLE[PlayerLevel+1])
             {
-                Level();
+                PlayerLevel++;
             }
 
             Exp += amount;
@@ -157,17 +156,6 @@ namespace Abstraction.Models
 
             int calcScore(int lvl) => (int)Math.Floor(a * lvl + b);
             return calcScore(PlayerLevel);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="amount"></param>
-        /// <param name="allowEpic"></param>
-        /// <returns></returns>
-        private int Level(byte amount=1, bool allowEpic=false)
-        {
-            throw new NotImplementedException();
         }
     }
 
